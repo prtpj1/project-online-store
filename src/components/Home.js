@@ -26,7 +26,7 @@ class Home extends Component {
 
   searchProduct = async () => {
     const { query } = this.state;
-    const products = await api.getProductsFromCategoryAndQuery(query);
+    const products = await api.getProductsFromCategoryAndQuery('MLB',query);
     console.log(products);
     this.setState({ products: products.results });
   }
