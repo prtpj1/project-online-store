@@ -4,15 +4,22 @@ import propTypes from 'prop-types';
 
 class Card extends Component {
   render() {
-    const { name, image, price, id } = this.props;
+    const { name, image, price, id, addingToCart, productToAdd } = this.props;
     return (
-      <Link data-testid="product-detail-link" to={ `/product/${id}` }>
-        <div data-testid="product">
+      <div data-testid="product">
+        <Link data-testid="product-detail-link" to={ `/product/${id}` }>
           <h3>{ name }</h3>
           <img src={ image } alt={ name } />
           <h3>{ price }</h3>
-        </div>
-      </Link>
+        </Link>
+        <button
+          type="button"
+          data-testid="product-add-to-cart"
+          onClick={ () => addingToCart(productToAdd) }
+        >
+          Adicionar ao carrinho
+        </button>
+      </div>
     );
   }
 }
