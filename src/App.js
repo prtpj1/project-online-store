@@ -37,7 +37,9 @@ class App extends Component {
           <Route
             exact
             path="/product/:id"
-            render={ (props) => <ProductDetails { ...props } /> }
+            render={ (props) => (
+              <ProductDetails addingToCart={ this.addingToCart } { ...props } />
+            ) }
           />
         </Switch>
       </BrowserRouter>
