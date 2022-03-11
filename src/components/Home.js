@@ -10,13 +10,13 @@ class Home extends Component {
       allCategories: [],
       query: '',
       products: [],
+      selectedCategoryId: '',
     };
   }
 
   async componentDidMount() {
     const allCategories = await api.getCategories();
     this.setState({ allCategories });
-    await api.getProductsFromCategoryAndQuery();
   }
 
   handleState = ({ target }) => {
@@ -24,10 +24,14 @@ class Home extends Component {
     this.setState({ [name]: value });
   }
 
+  handleStateAndSearch = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value }, this.searchProduct);
+  }
+
   searchProduct = async () => {
-    const { query } = this.state;
-    const products = await api.getProductsFromCategoryAndQuery('MLB', query);
-    console.log(products);
+    const { query, selectedCategoryId } = this.state;
+    const products = await api.getProductsFromCategoryAndQuery(selectedCategoryId, query);
     this.setState({ products: products.results });
   }
 
@@ -36,6 +40,7 @@ class Home extends Component {
       state: { allCategories, query, products },
       handleState,
       searchProduct,
+      handleStateAndSearch,
     } = this;
     return (
       <div>
@@ -50,7 +55,19 @@ class Home extends Component {
           <ul>
             {
               allCategories.map((element) => (
-                <li data-testid="category" key={ element.name }>{ element.name }</li>
+
+                <li key={ element.id }>
+                  <button
+                    type="button"
+                    data-testid="category"
+                    name="selectedCategoryId"
+                    value={ element.id }
+                    id={ element.name }
+                    onClick={ handleStateAndSearch }
+                  >
+                    { element.name }
+                  </button>
+                </li>
               ))
             }
           </ul>
@@ -75,8 +92,8 @@ class Home extends Component {
           <section>
             {
               products ? (
-                products.map(({ title, thumbnail, price }) => (
-                  <li key={ title }>
+                products.map(({ title, thumbnail, price, id }) => (
+                  <li key={ id }>
                     <Card name={ title } image={ thumbnail } price={ price } />
                   </li>
                 ))
