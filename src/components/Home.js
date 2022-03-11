@@ -59,10 +59,10 @@ class Home extends Component {
                 <li key={ element.id }>
                   <button
                     type="button"
+                    data-testid="category"
                     name="selectedCategoryId"
                     value={ element.id }
                     id={ element.name }
-                    data-testid="category"
                     onClick={ handleStateAndSearch }
                   >
                     { element.name }
