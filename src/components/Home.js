@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 import * as api from '../services/api';
 import Card from './Card';
 
@@ -41,6 +42,7 @@ class Home extends Component {
       handleState,
       searchProduct,
       handleStateAndSearch,
+      props: { addingToCart },
     } = this;
     return (
       <div>
@@ -92,13 +94,15 @@ class Home extends Component {
           <section>
             {
               products ? (
-                products.map(({ title, thumbnail, price, id }) => (
-                  <li key={ id }>
+                products.map((element) => (
+                  <li key={ element.id }>
                     <Card
-                      name={ title }
-                      image={ thumbnail }
-                      price={ price }
-                      id={ id }
+                      name={ element.title }
+                      image={ element.thumbnail }
+                      price={ element.price }
+                      id={ element.id }
+                      productToAdd={ element }
+                      addingToCart={ addingToCart }
                     />
                   </li>
                 ))
@@ -114,5 +118,9 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  addingToCart: propTypes.func.isRequired,
+};
 
 export default Home;
