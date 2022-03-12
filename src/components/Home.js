@@ -46,42 +46,16 @@ class Home extends Component {
     } = this;
     return (
       <div>
-        <p data-testid="home-initial-message">
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </p>
-        <Link to="/shopping-cart" data-testid="shopping-cart-button">
-          Carrinho de compras
-        </Link>
-        <aside>
-          <h1>Categorias</h1>
-          <ul>
-            {
-              allCategories.map((element) => (
-
-                <li key={ element.id }>
-                  <button
-                    type="button"
-                    data-testid="category"
-                    name="selectedCategoryId"
-                    value={ element.id }
-                    id={ element.name }
-                    onClick={ handleStateAndSearch }
-                  >
-                    { element.name }
-                  </button>
-                </li>
-              ))
-            }
-          </ul>
-        </aside>
-        <main>
-          <section>
+        <header>
+          <section className="search">
             <input
+              className="inpt-search"
               type="text"
               data-testid="query-input"
               name="query"
               value={ query }
               onChange={ handleState }
+              size="100"
             />
             <button
               type="button"
@@ -91,11 +65,43 @@ class Home extends Component {
               Pesquisar
             </button>
           </section>
-          <section>
+          <Link to="/shopping-cart" data-testid="shopping-cart-button">
+            Carrinho de compras
+          </Link>
+        </header>
+        <main className="main-container">
+          <aside>
+            <h1>Categorias</h1>
+            <ul>
+              {
+                allCategories.map((element) => (
+
+                  <li key={ element.id }>
+                    <button
+                      type="button"
+                      data-testid="category"
+                      name="selectedCategoryId"
+                      value={ element.id }
+                      id={ element.name }
+                      onClick={ handleStateAndSearch }
+                    >
+                      { element.name }
+                    </button>
+                  </li>
+                ))
+              }
+            </ul>
+          </aside>
+
+          <p data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </p>
+
+          <section className="products-display">
             {
               products ? (
                 products.map((element) => (
-                  <li key={ element.id }>
+                  <li key={ element.id } className="product-card">
                     <Card
                       name={ element.title }
                       image={ element.thumbnail }
