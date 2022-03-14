@@ -3,21 +3,22 @@ import propTypes from 'prop-types';
 
 class ShoppingCart extends Component {
   render() {
-    const { productsInCart } = this.props;
+    const productsInCartString = localStorage.getItem('productsInCart');
+    const productsInCartArray = JSON.parse(productsInCartString);
     return (
       <div>
-        {productsInCart.length !== 0 ? (
-          productsInCart.map((element) => (
-            <div key={ element.title }>
+        {productsInCartArray.length !== 0 ? (
+          productsInCartArray.map((element) => (
+            <div key={ element.allInfos.id }>
               <h3 data-testid="shopping-cart-product-name">
-                { element.title }
+                { element.allInfos.title }
               </h3>
-              <img src={ element.thumbnail } alt={ element.title } />
-              <p data-testid="shopping-cart-product-quantity">Quantidade: 1</p>
+              <img src={ element.allInfos.thumbnail } alt={ element.allInfos.title } />
+              <p data-testid="shopping-cart-product-quantity">Quantidade: { element.quantity }</p>
               <p>
-                Preço:
+                Preço
                 {': '}
-                { element.price }
+                { element.allInfos.price * element.quantity }
               </p>
             </div>
           ))
