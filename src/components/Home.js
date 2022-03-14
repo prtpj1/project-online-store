@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import propTypes from 'prop-types';
 import * as api from '../services/api';
 import Card from './Card';
+import * as storage from '../services/handleStorage';
 
 class Home extends Component {
   constructor(props) {
@@ -42,7 +42,6 @@ class Home extends Component {
       handleState,
       searchProduct,
       handleStateAndSearch,
-      props: { addingToCart },
     } = this;
     return (
       <div>
@@ -108,7 +107,7 @@ class Home extends Component {
                       price={ element.price }
                       id={ element.id }
                       productToAdd={ element }
-                      addingToCart={ addingToCart }
+                      addingToCart={ storage.addToCart }
                     />
                   </li>
                 ))
@@ -124,9 +123,5 @@ class Home extends Component {
     );
   }
 }
-
-Home.propTypes = {
-  addingToCart: propTypes.func.isRequired,
-};
 
 export default Home;
