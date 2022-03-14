@@ -8,7 +8,7 @@ class ShoppingCart extends Component {
     const productsInCartArray = JSON.parse(productsInCartString);
     this.state = {
       productsInCartArray,
-    }
+    };
   }
 
   render() {
@@ -22,21 +22,31 @@ class ShoppingCart extends Component {
                 { element.allInfos.title }
               </h3>
               <img src={ element.allInfos.thumbnail } alt={ element.allInfos.title } />
-              <p data-testid="shopping-cart-product-quantity">Quantidade: { element.quantity }</p>
+              <p data-testid="shopping-cart-product-quantity">
+                Quantidade:
+                {' '}
+                { element.quantity }
+              </p>
               <p>
                 Preço
                 {': '}
                 { (element.allInfos.price * element.quantity).toFixed(2) }
               </p>
               <button
+                type="button"
                 data-testid="product-increase-quantity"
-                onClick={() => this.setState({ productsInCartArray: storage.addToCart(element.allInfos) })  }
+                onClick={ () => this.setState({
+                  productsInCartArray: storage.addToCart(element.allInfos),
+                }) }
               >
                 Mais um
               </button>
               <button
+                type="button"
                 data-testid="product-decrease-quantity"
-                onClick={ () => this.setState({ productsInCartArray: storage.descreaseInCart(element.allInfos) })  }
+                onClick={ () => this.setState({
+                  productsInCartArray: storage.descreaseInCart(element.allInfos),
+                }) }
               >
                 Menos um
               </button>

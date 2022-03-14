@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import propTypes from 'prop-types';
 import * as api from '../services/api';
 import Card from './Card';
 import * as storage from '../services/handleStorage';

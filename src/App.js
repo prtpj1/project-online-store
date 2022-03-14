@@ -6,7 +6,6 @@ import ProductDetails from './components/ProductDetails';
 import ShoppingCart from './components/ShoppingCart';
 
 class App extends Component {
-
   render() {
     return (
       <BrowserRouter>
