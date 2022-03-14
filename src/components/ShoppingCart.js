@@ -15,7 +15,7 @@ class ShoppingCart extends Component {
     const { productsInCartArray } = this.state;
     return (
       <div>
-        {productsInCartArray.length !== 0 ? (
+        {productsInCartArray ? (
           productsInCartArray.map((element) => (
             <div key={ element.allInfos.id }>
               <h3 data-testid="shopping-cart-product-name">
