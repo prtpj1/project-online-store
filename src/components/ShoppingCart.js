@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+import * as storage from '../services/handleStorage';
 
 class ShoppingCart extends Component {
-  render() {
+  constructor(props) {
+    super(props);
     const productsInCartString = localStorage.getItem('productsInCart');
     const productsInCartArray = JSON.parse(productsInCartString);
+    this.state = {
+      productsInCartArray,
+    }
+  }
+
+  render() {
+    const { productsInCartArray } = this.state;
     return (
       <div>
         {productsInCartArray.length !== 0 ? (
@@ -18,8 +26,20 @@ class ShoppingCart extends Component {
               <p>
                 Preço
                 {': '}
-                { element.allInfos.price * element.quantity }
+                { (element.allInfos.price * element.quantity).toFixed(2) }
               </p>
+              <button
+                data-testid="product-increase-quantity"
+                onClick={() => this.setState({ productsInCartArray: storage.addToCart(element.allInfos) })  }
+              >
+                Mais um
+              </button>
+              <button
+                data-testid="product-decrease-quantity"
+                onClick={ () => this.setState({ productsInCartArray: storage.descreaseInCart(element.allInfos) })  }
+              >
+                Menos um
+              </button>
             </div>
           ))
         ) : (
@@ -31,11 +51,5 @@ class ShoppingCart extends Component {
     );
   }
 }
-
-ShoppingCart.propTypes = {
-  productsInCart: propTypes.arrayOf(
-    propTypes.objectOf(propTypes.any),
-  ).isRequired,
-};
 
 export default ShoppingCart;

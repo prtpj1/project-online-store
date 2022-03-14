@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import * as api from '../services/api';
 import Card from './Card';
+import * as storage from '../services/handleStorage';
 
 class Home extends Component {
   constructor(props) {
@@ -36,30 +37,12 @@ class Home extends Component {
     this.setState({ products: products.results });
   }
 
-  addToCart = (product) => {
-    const productsInCartString = localStorage.getItem('productsInCart');
-    const toAddInStorage = { allInfos: product, quantity: 1 };
-    if (productsInCartString === null) {
-      localStorage.setItem('productsInCart', JSON.stringify([toAddInStorage]));
-    } else {
-      const productsInCartObj = JSON.parse(productsInCartString);
-      const indexSameId = productsInCartObj.findIndex((element) => element.allInfos.id === product.id);
-      if (indexSameId === -1) {
-        productsInCartObj.push(toAddInStorage);
-      } else {
-        productsInCartObj[indexSameId].quantity += 1;
-      }
-      localStorage.setItem('productsInCart', JSON.stringify(productsInCartObj));
-    }
-  }
-
   render() {
     const {
       state: { allCategories, query, products },
       handleState,
       searchProduct,
       handleStateAndSearch,
-      addToCart: addingToCart,
     } = this;
     return (
       <div>
@@ -125,7 +108,7 @@ class Home extends Component {
                       price={ element.price }
                       id={ element.id }
                       productToAdd={ element }
-                      addingToCart={ addingToCart }
+                      addingToCart={ storage.addToCart }
                     />
                   </li>
                 ))
@@ -141,9 +124,5 @@ class Home extends Component {
     );
   }
 }
-
-Home.propTypes = {
-  addingToCart: propTypes.func.isRequired,
-};
 
 export default Home;

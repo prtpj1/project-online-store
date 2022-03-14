@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import * as api from '../services/api';
+import * as storage from '../services/handleStorage';
 
 class ProductDetails extends Component {
   constructor(props) {
@@ -24,7 +25,6 @@ class ProductDetails extends Component {
 
   render() {
     const { title, thumbnail, attributes, price, product } = this.state;
-    const { addingToCart } = this.props;
     return (
       <div data-testid="product-detail-name">
         <Link to="/shopping-cart" data-testid="shopping-cart-button">
@@ -36,7 +36,7 @@ class ProductDetails extends Component {
         <button
           data-testid="product-detail-add-to-cart"
           type="button"
-          onClick={ () => addingToCart(product) }
+          onClick={ () => storage.addToCart(product) }
         >
           Adicionar ao carrinho
         </button>
