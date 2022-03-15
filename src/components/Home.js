@@ -44,30 +44,31 @@ class Home extends Component {
       handleStateAndSearch,
     } = this;
     return (
-      <div>
+      <>
         <header>
-          <section className="search">
-            <input
-              className="inpt-search"
-              type="text"
-              data-testid="query-input"
-              name="query"
-              value={ query }
-              onChange={ handleState }
-              size="100"
-            />
-            <button
-              type="button"
-              data-testid="query-button"
-              onClick={ searchProduct }
-            >
-              Pesquisar
-            </button>
-          </section>
+          Frontend Online Store 23
           <Link to="/shopping-cart" data-testid="shopping-cart-button">
             Carrinho de compras
           </Link>
         </header>
+        <section className="search">
+          <input
+            className="inpt-search"
+            type="text"
+            data-testid="query-input"
+            name="query"
+            value={ query }
+            onChange={ handleState }
+            size="100"
+          />
+          <button
+            type="button"
+            data-testid="query-button"
+            onClick={ searchProduct }
+          >
+            Pesquisar
+          </button>
+        </section>
         <main className="main-container">
           <aside>
             <h1>Categorias</h1>
@@ -119,7 +120,7 @@ class Home extends Component {
             }
           </section>
         </main>
-      </div>
+      </>
     );
   }
 }
