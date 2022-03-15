@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import * as storage from '../services/handleStorage';
 
 class ShoppingCart extends Component {
@@ -22,6 +23,9 @@ class ShoppingCart extends Component {
     const { productsInCartArray } = this.state;
     return (
       <div>
+        {productsInCartArray.length ? (
+          <Link to="/checkout" data-testid="checkout-products">Finalizar compra</Link>
+        ) : ''}
         {productsInCartArray.length ? (
           productsInCartArray.map((element) => (
             <div key={ element.allInfos.id }>

@@ -19,18 +19,22 @@ class ProductDetails extends Component {
   async componentDidMount() {
     const { match: { params: { id } } } = this.props;
     const product = await api.getProductById(id);
-    console.log(product);
+    console.log(this.props);
     const { title, thumbnail, attributes, price } = product;
     this.setState({ title, thumbnail, attributes, price, product });
   }
 
   render() {
     const { title, thumbnail, attributes, price, product } = this.state;
+    const { history } = this.props;
     return (
       <div data-testid="product-detail-name">
         <Link to="/shopping-cart" data-testid="shopping-cart-button">
           Carrinho de compras
         </Link>
+        <button type="button" onClick={ () => history.goBack() }>
+          Voltar
+        </button>
         <h3>{ title }</h3>
         <h3>{ price }</h3>
         <img src={ thumbnail } alt={ title } />
