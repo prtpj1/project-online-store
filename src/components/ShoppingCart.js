@@ -5,27 +5,36 @@ class ShoppingCart extends Component {
   constructor(props) {
     super(props);
     const productsInCartString = localStorage.getItem('productsInCart');
-    const productsInCartArray = JSON.parse(productsInCartString);
-    this.state = {
-      productsInCartArray,
-    };
+    if (productsInCartString === null) {
+      this.state = {
+        productsInCartArray: [],
+      };
+      localStorage.setItem('productsInCart', '[]');
+    } else {
+      const productsInCartArray = JSON.parse(productsInCartString);
+      this.state = {
+        productsInCartArray,
+      };
+    }
   }
 
   render() {
     const { productsInCartArray } = this.state;
     return (
       <div>
-        {productsInCartArray ? (
+        {productsInCartArray.length ? (
           productsInCartArray.map((element) => (
             <div key={ element.allInfos.id }>
               <h3 data-testid="shopping-cart-product-name">
                 { element.allInfos.title }
               </h3>
               <img src={ element.allInfos.thumbnail } alt={ element.allInfos.title } />
-              <p data-testid="shopping-cart-product-quantity">
+              <p>
                 Quantidade:
                 {' '}
-                { element.quantity }
+                <span data-testid="shopping-cart-product-quantity">
+                  {element.quantity}
+                </span>
               </p>
               <p>
                 Preço
@@ -35,6 +44,7 @@ class ShoppingCart extends Component {
               <button
                 type="button"
                 data-testid="product-increase-quantity"
+                disabled={ element.quantity >= element.allInfos.available_quantity }
                 onClick={ () => this.setState({
                   productsInCartArray: storage.addToCart(element.allInfos),
                 }) }
@@ -44,11 +54,21 @@ class ShoppingCart extends Component {
               <button
                 type="button"
                 data-testid="product-decrease-quantity"
+                disabled={ element.quantity <= 1 }
                 onClick={ () => this.setState({
                   productsInCartArray: storage.descreaseInCart(element.allInfos),
                 }) }
               >
                 Menos um
+              </button>
+              <button
+                type="button"
+                data-testid="product-decrease-quantity"
+                onClick={ () => this.setState({
+                  productsInCartArray: storage.removeFromCart(element.allInfos),
+                }) }
+              >
+                Remover do carrinho
               </button>
             </div>
           ))
