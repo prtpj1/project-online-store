@@ -172,7 +172,7 @@ class ProductDetails extends Component {
               <h2>Avaliações</h2>
               {
                 savedEvaluationsObj[indexOfProduct].evaluations.map((element, index) => (
-                  <section key={ `${index}-evaluation` }>
+                  <section key={ `${index}-evaluations-subsection` }>
                     <ul>
                       <li>
                         Email:
