@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../services/api';
 import Card from './Card';
-import * as storage from '../services/handleStorage';
 
 class Home extends Component {
   constructor(props) {
@@ -12,12 +11,25 @@ class Home extends Component {
       query: '',
       products: [],
       selectedCategoryId: '',
+      numberItemsInCart: this.getSizeCart(),
     };
   }
 
   async componentDidMount() {
     const allCategories = await api.getCategories();
     this.setState({ allCategories });
+  }
+
+  getSizeCart = () => {
+    const productsInCartString = localStorage.getItem('productsInCart');
+    const productsInCart = (productsInCartString === null)
+      ? [] : JSON.parse(productsInCartString);
+    const totalItems = productsInCart.reduce((acc, curr) => curr.quantity + acc, 0);
+    return totalItems;
+  }
+
+  updateSizeCartOInState = (totalItems) => {
+    this.setState({ numberItemsInCart: totalItems });
   }
 
   handleState = ({ target }) => {
@@ -38,11 +50,12 @@ class Home extends Component {
 
   render() {
     const {
-      state: { allCategories, query, products },
+      state: { allCategories, query, products, numberItemsInCart },
       handleState,
       searchProduct,
       handleStateAndSearch,
     } = this;
+
     return (
       <>
         <header>
@@ -50,6 +63,11 @@ class Home extends Component {
           <Link to="/shopping-cart" data-testid="shopping-cart-button">
             Carrinho de compras
           </Link>
+          <p>
+            Número de itens:
+            {' '}
+            <span data-testid="shopping-cart-size">{ numberItemsInCart }</span>
+          </p>
         </header>
         <section className="search">
           <input
@@ -108,7 +126,7 @@ class Home extends Component {
                       price={ element.price }
                       id={ element.id }
                       productToAdd={ element }
-                      addingToCart={ storage.addToCart }
+                      updateSizeCartOInState={ this.updateSizeCartOInState }
                     />
                   </li>
                 ))
