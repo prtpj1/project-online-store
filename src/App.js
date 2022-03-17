@@ -24,14 +24,12 @@ class App extends Component {
           <Route
             exact
             path="/product/:id"
-            render={ (props) => (
-              <ProductDetails { ...props } />
-            ) }
+            render={ (props) => <ProductDetails { ...props } /> }
           />
           <Route
             exact
             path="/checkout"
-            component={ Checkout }
+            render={ () => <Checkout /> }
           />
         </Switch>
       </BrowserRouter>

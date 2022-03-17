@@ -24,6 +24,7 @@ class ProductDetails extends Component {
       comments: '',
       idProduct: id,
       evaluations: savedEvaluationsObj,
+      numberItemsInCart: this.updateNumberItemsInCart(),
     };
   }
 
@@ -72,6 +73,14 @@ class ProductDetails extends Component {
     this.setState({ [name]: value });
   }
 
+  updateNumberItemsInCart = () => {
+    const productsInCartString = localStorage.getItem('productsInCart');
+    const productsInCart = (productsInCartString === null)
+      ? [] : JSON.parse(productsInCartString);
+    const totalItems = productsInCart.reduce((acc, curr) => curr.quantity + acc, 0);
+    return totalItems;
+  }
+
   render() {
     const {
       title,
@@ -84,9 +93,9 @@ class ProductDetails extends Component {
       comments,
       idProduct: id,
       evaluations: savedEvaluationsObj,
+      numberItemsInCart,
     } = this.state;
     const indexDontExist = -1;
-    const { history } = this.props;
     const maxRate = 5;
     const rateVector = Array(maxRate).fill(0);
     const indexOfProduct = savedEvaluationsObj.findIndex((element) => (
@@ -94,20 +103,31 @@ class ProductDetails extends Component {
     ));
     return (
       <>
-        <div data-testid="product-detail-name">
+        <header>
+          Frontend Online Store 23
           <Link to="/shopping-cart" data-testid="shopping-cart-button">
             Carrinho de compras
           </Link>
-          <button type="button" onClick={ () => history.goBack() }>
+          <p>
+            Número de itens:
+            {' '}
+            <span data-testid="shopping-cart-size">{ numberItemsInCart }</span>
+          </p>
+          <Link to="/">
             Voltar
-          </button>
+          </Link>
+        </header>
+        <div data-testid="product-detail-name">
           <h3>{ title }</h3>
           <h3>{ price }</h3>
           <img src={ thumbnail } alt={ title } />
           <button
             data-testid="product-detail-add-to-cart"
             type="button"
-            onClick={ () => storage.addToCart(product) }
+            onClick={ () => {
+              storage.addToCart(product);
+              this.setState({ numberItemsInCart: this.updateNumberItemsInCart() });
+            } }
           >
             Adicionar ao carrinho
           </button>
@@ -137,15 +157,15 @@ class ProductDetails extends Component {
             />
           </label>
           {rateVector.map((_rate, index) => (
-            <label key="index" htmlFor={ `${index + 1}-rating` }>
+            <label key={ `${index + 1}-rating` } htmlFor={ `${index + 1}-rating` }>
               {index + 1}
               <input
                 type="radio"
                 id={ `${index + 1}-rating` }
                 name="rating"
-                key={ `${index + 1}-rating` }
                 value={ index + 1 }
-                checked={ index + 1 === rating }
+                className={ index <= (rating) ? 'rate-btn on' : 'rate-btn off' }
+                checked={ index + 1 === parseInt(rating, 10) }
                 data-testid={ `${index + 1}-rating` }
                 onChange={ this.handleState }
               />
@@ -193,7 +213,6 @@ class ProductDetails extends Component {
             </section>
           )
         }
-
       </>
     );
   }

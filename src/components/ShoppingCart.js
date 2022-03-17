@@ -77,9 +77,17 @@ class ShoppingCart extends Component {
             </div>
           ))
         ) : (
-          <p data-testid="shopping-cart-empty-message">
-            Seu carrinho está vazio.
-          </p>
+          <>
+            <header>
+              Frontend Online Store 23
+              <Link to="/">
+                Voltar
+              </Link>
+            </header>
+            <p data-testid="shopping-cart-empty-message">
+              Seu carrinho está vazio.
+            </p>
+          </>
         )}
       </div>
     );
