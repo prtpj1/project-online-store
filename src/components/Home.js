@@ -4,7 +4,6 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 
 import * as api from '../services/api';
 import Card from './Card';
-import * as storage from '../services/handleStorage';
 
 // library.add(fas, faTwitter, faFontAwesome);
 
@@ -16,12 +15,25 @@ class Home extends Component {
       query: '',
       products: [],
       selectedCategoryId: '',
+      numberItemsInCart: this.getSizeCart(),
     };
   }
 
   async componentDidMount() {
     const allCategories = await api.getCategories();
     this.setState({ allCategories });
+  }
+
+  getSizeCart = () => {
+    const productsInCartString = localStorage.getItem('productsInCart');
+    const productsInCart = (productsInCartString === null)
+      ? [] : JSON.parse(productsInCartString);
+    const totalItems = productsInCart.reduce((acc, curr) => curr.quantity + acc, 0);
+    return totalItems;
+  }
+
+  updateSizeCartOInState = (totalItems) => {
+    this.setState({ numberItemsInCart: totalItems });
   }
 
   handleState = ({ target }) => {
@@ -42,37 +54,43 @@ class Home extends Component {
 
   render() {
     const {
-      state: { allCategories, query, products },
+      state: { allCategories, query, products, numberItemsInCart },
       handleState,
       searchProduct,
       handleStateAndSearch,
     } = this;
-    return (
-      <div>
-        <header>
-          <section className="search">
-            <input
-              className="inpt-search"
-              type="text"
-              data-testid="query-input"
-              name="query"
-              value={ query }
-              onChange={ handleState }
-              size="100"
-            />
-            <button
-              type="button"
-              data-testid="query-button"
-              onClick={ searchProduct }
-            >
-              Pesquisar
-            </button>
-          </section>
 
+    return (
+      <>
+        <header>
+          Frontend Online Store 23
           <Link to="/shopping-cart" data-testid="shopping-cart-button">
             <HiOutlineShoppingCart size={ 40 } />
           </Link>
+          <p>
+            Número de itens:
+            {' '}
+            <span data-testid="shopping-cart-size">{ numberItemsInCart }</span>
+          </p>
         </header>
+        <section className="search">
+          <input
+            className="inpt-search"
+            type="text"
+            data-testid="query-input"
+            name="query"
+            value={ query }
+            onChange={ handleState }
+            size="100"
+          />
+          <button
+            type="button"
+            data-testid="query-button"
+            onClick={ searchProduct }
+          >
+            Pesquisar
+          </button>
+        </section>
         <main className="main-container">
           <aside>
             <h1 className="category-h1">Categorias</h1>
@@ -112,7 +130,7 @@ class Home extends Component {
                       price={ element.price }
                       id={ element.id }
                       productToAdd={ element }
-                      addingToCart={ storage.addToCart }
+                      updateSizeCartOInState={ this.updateSizeCartOInState }
                     />
                   </li>
                 ))
@@ -124,7 +142,7 @@ class Home extends Component {
             }
           </section>
         </main>
-      </div>
+      </>
     );
   }
 }

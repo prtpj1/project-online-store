@@ -29,3 +29,14 @@ export function descreaseInCart(product) {
   localStorage.setItem('productsInCart', JSON.stringify(productsInCartObj));
   return productsInCartObj;
 }
+
+export function removeFromCart(product) {
+  const productsInCartString = localStorage.getItem('productsInCart');
+  const productsInCartObj = JSON.parse(productsInCartString);
+  const indexSameId = productsInCartObj.findIndex((element) => (
+    element.allInfos.id === product.id
+  ));
+  productsInCartObj.splice(indexSameId, 1);
+  localStorage.setItem('productsInCart', JSON.stringify(productsInCartObj));
+  return productsInCartObj;
+}

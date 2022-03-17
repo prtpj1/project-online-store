@@ -142,3 +142,23 @@ ul, li {
   font-size: 30px;
   text-shadow: -1px 0 black , 0 1px black , 1px 0 black , 0 -1px black;
 }
+
+.rate-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.on {
+  color: rgb(255, 230, 0);
+}
+
+.off {
+  color: #ccc;
+}
+
+.star {
+  font-size: 30px;
+  text-shadow: -1px 0 black , 0 1px black , 1px 0 black , 0 -1px black;
+}
