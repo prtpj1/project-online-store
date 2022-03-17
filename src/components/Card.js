@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import * as storage from '../services/handleStorage';
 
+import { MdOutlineAddShoppingCart } from 'react-icons/md';
+
 class Card extends Component {
   getSizeCart = () => {
     const productsInCartString = localStorage.getItem('productsInCart');
@@ -15,13 +17,20 @@ class Card extends Component {
   render() {
     const { name, image, price, id, productToAdd, updateSizeCartOInState } = this.props;
     return (
-      <div data-testid="product">
+      <div data-testid="product" className="product-card">
         <Link data-testid="product-detail-link" to={ `/product/${id}` }>
-          <h3>{ name }</h3>
-          <img src={ image } alt={ name } />
-          <h3>{ price }</h3>
+          <div className="product-card-link">
+            <div className="product-img">
+              <img src={ image } alt={ name } />
+            </div>
+            <div>
+              <h2 className="product-card-title">{ name }</h2>
+              <h3 className="product-card-price">{ `R$ ${price.toFixed(2)}` }</h3>
+            </div>
+          </div>
         </Link>
         <button
+          className="add-to-cart"
           type="button"
           data-testid="product-add-to-cart"
           onClick={ () => {
@@ -29,7 +38,7 @@ class Card extends Component {
             updateSizeCartOInState(this.getSizeCart());
           } }
         >
-          Adicionar ao carrinho
+          <MdOutlineAddShoppingCart size={ 30 } />
         </button>
       </div>
     );

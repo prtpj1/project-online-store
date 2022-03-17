@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
+
 import * as api from '../services/api';
 import Card from './Card';
+
+// library.add(fas, faTwitter, faFontAwesome);
 
 class Home extends Component {
   constructor(props) {
@@ -61,7 +65,7 @@ class Home extends Component {
         <header>
           Frontend Online Store 23
           <Link to="/shopping-cart" data-testid="shopping-cart-button">
-            Carrinho de compras
+            <HiOutlineShoppingCart size={ 40 } />
           </Link>
           <p>
             Número de itens:
@@ -89,7 +93,7 @@ class Home extends Component {
         </section>
         <main className="main-container">
           <aside>
-            <h1>Categorias</h1>
+            <h1 className="category-h1">Categorias</h1>
             <ul>
               {
                 allCategories.map((element) => (
@@ -97,6 +101,7 @@ class Home extends Component {
                   <li key={ element.id }>
                     <button
                       type="button"
+                      className="category-btn"
                       data-testid="category"
                       name="selectedCategoryId"
                       value={ element.id }
@@ -114,12 +119,11 @@ class Home extends Component {
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
-
           <section className="products-display">
             {
               products ? (
                 products.map((element) => (
-                  <li key={ element.id } className="product-card">
+                  <li key={ element.id } className="product">
                     <Card
                       name={ element.title }
                       image={ element.thumbnail }
