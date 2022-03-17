@@ -14,7 +14,7 @@ class ProductDetails extends Component {
     ) : JSON.parse(savedEvaluations);
 
     this.state = {
-      product: '',
+      product: { shipping: { free_shipping: false } },
       title: '',
       thumbnail: '',
       attributes: [],
@@ -95,12 +95,15 @@ class ProductDetails extends Component {
       evaluations: savedEvaluationsObj,
       numberItemsInCart,
     } = this.state;
+
     const indexDontExist = -1;
     const maxRate = 5;
     const rateVector = Array(maxRate).fill(0);
     const indexOfProduct = savedEvaluationsObj.findIndex((element) => (
       element.idProduct === id
     ));
+
+    console.log(product);
     return (
       <>
         <header>
@@ -117,6 +120,7 @@ class ProductDetails extends Component {
             Voltar
           </Link>
         </header>
+
         <div data-testid="product-detail-name">
           <h3>{ title }</h3>
           <h3>{ price }</h3>
@@ -131,6 +135,11 @@ class ProductDetails extends Component {
           >
             Adicionar ao carrinho
           </button>
+
+          {product.shipping.free_shipping && (
+            <p data-testid="free-shipping">Frete grátis</p>
+          )}
+
           <ul>
             {
               attributes.map((element) => (
@@ -143,7 +152,9 @@ class ProductDetails extends Component {
             }
           </ul>
         </div>
+
         <h2>Avaliar produto</h2>
+
         <form>
           <label htmlFor="product-detail-email">
             Email:
@@ -156,6 +167,7 @@ class ProductDetails extends Component {
               onChange={ this.handleState }
             />
           </label>
+
           {rateVector.map((_rate, index) => (
             <label key={ `${index + 1}-rating` } htmlFor={ `${index + 1}-rating` }>
               {index + 1}
@@ -171,6 +183,7 @@ class ProductDetails extends Component {
               />
             </label>
           ))}
+
           <textarea
             data-testid="product-detail-evaluation"
             name="comments"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { HiOutlineShoppingCart } from 'react-icons/hi';
+// import { HiOutlineShoppingCart } from 'react-icons/hi';
 
 import * as api from '../services/api';
 import Card from './Card';
@@ -65,7 +65,8 @@ class Home extends Component {
         <header>
           Frontend Online Store 23
           <Link to="/shopping-cart" data-testid="shopping-cart-button">
-            <HiOutlineShoppingCart size={ 40 } />
+            Carrinho
+            {/* <HiOutlineShoppingCart size={ 40 } /> */}
           </Link>
           <p>
             Número de itens:
