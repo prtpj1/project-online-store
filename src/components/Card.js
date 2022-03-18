@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import * as storage from '../services/handleStorage';
 
-import { MdOutlineAddShoppingCart } from 'react-icons/md';
+// import { MdOutlineAddShoppingCart } from 'react-icons/md';
 
 class Card extends Component {
   getSizeCart = () => {
@@ -27,6 +27,9 @@ class Card extends Component {
               <h2 className="product-card-title">{ name }</h2>
               <h3 className="product-card-price">{ `R$ ${price.toFixed(2)}` }</h3>
             </div>
+            {productToAdd.shipping.free_shipping && (
+              <p data-testid="free-shipping">Frete grátis</p>
+            ) }
           </div>
         </Link>
         <button
@@ -38,7 +41,8 @@ class Card extends Component {
             updateSizeCartOInState(this.getSizeCart());
           } }
         >
-          <MdOutlineAddShoppingCart size={ 30 } />
+          Adicionar ao carrinho
+          {/* <MdOutlineAddShoppingCart size={ 30 } /> */}
         </button>
       </div>
     );
