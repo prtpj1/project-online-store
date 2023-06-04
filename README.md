@@ -73,7 +73,3 @@ Aprendi bastante com cada um deles:
 </br>
 </br>
 Em breve estarei disponibilizando também os projetos dos módulos de **BackEnd** e **Ciência da Computação***
-
-✅
-
-❌
