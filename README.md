@@ -53,7 +53,7 @@ Aprendi bastante com cada um deles:
 
 ## Link para visualizar o site do projeto:
 
-<!---[Site do Projeto]()-->
+[Site do Projeto](https://prtpj1-online-store.netlify.app/)
 
 ## Como rodar a aplicação?
 
