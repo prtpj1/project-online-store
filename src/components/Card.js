@@ -3,46 +3,43 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 import * as storage from '../services/handleStorage';
 
-// import { MdOutlineAddShoppingCart } from 'react-icons/md';
+import { getSizeCart } from '../utils/cartIconFuncs';
 
 class Card extends Component {
-  getSizeCart = () => {
-    const productsInCartString = localStorage.getItem('productsInCart');
-    const productsInCart = (productsInCartString === null)
-      ? [] : JSON.parse(productsInCartString);
-    const totalItems = productsInCart.reduce((acc, curr) => curr.quantity + acc, 0);
-    return totalItems;
-  }
-
   render() {
-    const { name, image, price, id, productToAdd, updateSizeCartOInState } = this.props;
+    const { name, image, price, id, productToAdd, updateSizeCartInState } = this.props;
     return (
-      <div data-testid="product" className="product-card">
-        <Link data-testid="product-detail-link" to={ `/product/${id}` }>
-          <div className="product-card-link">
+      <div className="product-card">
+        <Link
+          className="product-card-link"
+          to={ `/product/${id}` }
+        >
+          <div className="product-card-link-img">
             <div className="product-img">
               <img src={ image } alt={ name } />
             </div>
-            <div>
-              <h2 className="product-card-title">{ name }</h2>
-              <h3 className="product-card-price">{ `R$ ${price.toFixed(2)}` }</h3>
-            </div>
+          </div>
+          <div className="product-card-link-text">
+            <h2 className="product-card-title">{ name }</h2>
+            <h3 className="product-card-price">{ `R$ ${price.toFixed(2)}` }</h3>
             {productToAdd.shipping.free_shipping && (
-              <p data-testid="free-shipping">Frete grátis</p>
+              <p
+                className="product-card-free-shipping"
+              >
+                Frete grátis
+              </p>
             ) }
           </div>
         </Link>
         <button
-          className="add-to-cart"
+          className="add-to-cart-btn"
           type="button"
-          data-testid="product-add-to-cart"
           onClick={ () => {
             storage.addToCart(productToAdd);
-            updateSizeCartOInState(this.getSizeCart());
+            updateSizeCartInState(getSizeCart());
           } }
         >
           Adicionar ao carrinho
-          {/* <MdOutlineAddShoppingCart size={ 30 } /> */}
         </button>
       </div>
     );
