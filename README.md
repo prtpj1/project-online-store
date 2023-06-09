@@ -31,7 +31,7 @@ O uso do Slack e Zoom também foram muito importantes para a comunicação do gr
 
 ### De acordo com requisitos do projeto:
 - Buscar produtos por termos ou por categoriasa partir da API do Mercado Livre ✅
-- Adicionar um produto ao carrinho de compras em diferentes quantidades ( ✅
+- Adicionar um produto ao carrinho de compras em diferentes quantidades ✅
 - Remover um produto do carrinho de compras em diferentes quantidades ✅
 - Visualizar detalhes e avaliações prévias de um produto ✅
 - Criar novas avaliações para um protudo ✅
