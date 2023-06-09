@@ -1,12 +1,9 @@
 # 12º Projeto: Online Store
+<p align="center">
+<img src="https://github.com/prtpj1/project-online-store/blob/main/src/images/12%20-%20OnlineStore.png" alt="Header" />
+</p>
 
-### :construction: README em construção ! :construction:
-
-Este projeto está com o CSS em fase inicial e incompleto. Pude iniciar a implementação do mesmo, mas logo depois já havia matéria nova e seguido de um novo projeto. Assim que possível estarei adicionando o CSS e as funcionalidades que ficaram faltando.
-<!-- <p align="center">
-
-<img src="" alt="Header" />
-</p> -->
+⚠️Este projeto está com o CSS incompleto. Pude iniciar a implementação do mesmo, mas logo depois já havia matéria nova e seguido de um novo projeto. Recentemente pude adicionar um pouco mais de CSS ao projeto, mas alguns problemas pessoais tem tomado grande parte do meu tempo. Assim que possível estarei adicionando o CSS e as funcionalidades que ficaram faltando.
 <hr/>
 <p align="center">
 <a href="#descrição-do-projeto">Descrição do Projeto</a> •
@@ -46,9 +43,9 @@ O grupo possuía colegas de diferentes níveis e conhecimento e com isso fomos d
 
 ### Grupo:
 Aprendi bastante com cada um deles:
-[Celso](https://github.com/fioranicelso)
-[Christian](https://github.com/mpchristian)
-[Lucca](https://github.com/luccarendall)
+- [Celso](https://github.com/fioranicelso)
+- [Christian](https://github.com/mpchristian)
+- [Lucca](https://github.com/luccarendall)
 <hr/>
 
 ## Tecnologias Utilizadas
