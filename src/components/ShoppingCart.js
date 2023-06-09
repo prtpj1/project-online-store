@@ -117,11 +117,12 @@ class ShoppingCart extends Component {
             <div className="to-checkout-resume-container">
               <div className="to-checkout-resume-details">
                 <span>{`Produtos (${totalQuantity})`}</span>
-                <span>{`R$${totalPrice.toFixed(2)}`}</span>
+                <span>{`R$ ${totalPrice.toFixed(2)}`}</span>
               </div>
               <div className="to-checkout-resume-total">
-                <span>Total: R$ </span>
-                <span>{totalPrice.toFixed(2)}</span>
+                <span>Total: </span>
+                <span>{`R$ ${totalPrice.toFixed(2)}`}</span>
+                {/* <span>{totalPrice.toFixed(2)}</span> */}
               </div>
               {productsInCartArray.length ? (
                 <Link to="/checkout" className="to-checkout-btn">Continuar a compra</Link>
