@@ -16,7 +16,7 @@
 </p>
 <hr/>
 
-### Descrição do Projeto
+## Descrição do Projeto
 Este foi meu primeiro projeto em grupo que ajudei a desenvolver enquanto estudava na Trybe. Um desafio viria temperadocom ansiedade. Será que daria certo? Todos colaborariam? Conseguiriamos contornar os problemas que pudessem surgir? <br>
 Confesso que estava bastante nervoso, mas tudo foi muito tranquilo. Foi quando pude ver as diferentes formas de abordar problemas com diferentes soluções, onde aprendi e também pude passar o que eu sabia (aprendi mais do que ensinei 🤓) <br>
 
@@ -24,12 +24,13 @@ Neste projeto, criamos uma versão simplificada, sem persistência no banco de d
 Desenvolvemos em grupo suas funcionalidades de acordo com demandas definidas em um quadro Kanban. <br>
 
 O uso do Slack e Zoom também foram muito importantes para a comunicação do grupo.
-<br>
+<br> <br>
 
-### Nesse projeto, apredemos e colocamos em prática:
+## Nesse projeto, apredemos e colocamos em prática:
 - Implementar o módulo de acesso à API do Mercado Livre
-
-### De acordo com requisitos do projeto:
+<br>
+ 
+## De acordo com requisitos do projeto:
 - Buscar produtos por termos ou por categoriasa partir da API do Mercado Livre ✅
 - Adicionar um produto ao carrinho de compras em diferentes quantidades ✅
 - Remover um produto do carrinho de compras em diferentes quantidades ✅
@@ -41,7 +42,7 @@ Boa parte do desenvolvimento foi feito em algo similar ao pair-programing, mas c
 Em outros momentos cada membro fez algumas partes do código em separado e também algumas correções e pequenas modificações.<br>
 O grupo possuía colegas de diferentes níveis e conhecimento e com isso fomos desenvolvendo com cada um contribuindo da melhor maneira que conseguia.<br><br>
 
-### Grupo:
+## Grupo:
 Aprendi bastante com cada um deles:
 - [Celso](https://github.com/fioranicelso)
 - [Christian](https://github.com/mpchristian)
