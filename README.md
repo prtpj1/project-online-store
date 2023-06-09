@@ -8,7 +8,14 @@ Este projeto está com o CSS em fase inicial e incompleto. Pude iniciar a implem
 <img src="" alt="Header" />
 </p> -->
 <hr/>
+<p align="center">
+<a href="#">Descrição do Projeto</a> •
+<a href="#">Tecnologias Utilizadas</a> •
+<a href="#">Visualizar Projeto</a>•
+<a href="#">Rodar a Aplicação</a>
+</p>
 
+### Descrição do Projeto
 Este foi meu primeiro projeto em grupo que ajudei a desenvolver enquanto estudava na Trybe. Um desafio viria temperadocom ansiedade. Será que daria certo? Todos colaborariam? Conseguiriamos contornar os problemas que pudessem surgir? <br>
 Confesso que estava bastante nervoso, mas tudo foi muito tranquilo. Foi quando pude ver as diferentes formas de abordar problemas com diferentes soluções, onde aprendi e também pude passar o que eu sabia (aprendi mais do que ensinei 🤓) <br>
 
