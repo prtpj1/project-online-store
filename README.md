@@ -12,7 +12,7 @@ Este projeto está com o CSS em fase inicial e incompleto. Pude iniciar a implem
 <a href="#descrição-do-projeto">Descrição do Projeto</a> •
 <a href="#nesse-projeto-apredemos-e-colocamos-em-prática">Aprendizado</a> •
 <a href="#de-acordo-com-requisitos-do-projeto">Requisitos</a> •
-<a href="#">Grupo</a> •
+<a href="#grupo">Grupo</a> •
 <a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a> •
 <a href="#link-para-visualizar-o-site-do-projeto">Visualizar Projeto</a> •
 <a href="#como-rodar-a-aplicação">Rodar a Aplicação</a>
@@ -38,7 +38,7 @@ O uso do Slack e Zoom também foram muito importantes para a comunicação do gr
 - Remover um produto do carrinho de compras em diferentes quantidades ✅
 - Visualizar detalhes e avaliações prévias de um produto ✅
 - Criar novas avaliações para um protudo ✅
-- Preencher dados na tela de checkout para a compra (simulada) dos itens selecionados ✅
+- Criar tela de Checkout para preenchimento dados do usuário para a compra (simulada - botão "Pagamento" não funciona) dos itens selecionados ✅
 <br>
 Boa parte do desenvolvimento foi feito em algo similar ao pair-programing, mas com todos nós nos ajudando mutuamente.<br>
 Em outros momentos cada membro fez algumas partes do código em separado e também algumas correções e pequenas modificações.<br>
@@ -46,15 +46,14 @@ O grupo possuía colegas de diferentes níveis e conhecimento e com isso fomos d
 
 ### Grupo:
 Aprendi bastante com cada um deles:
-<!--- [Nome]() -->
+[Celso](https://github.com/fioranicelso)
+[Christian](https://github.com/mpchristian)
+[Lucca](https://github.com/luccarendall)
 <hr/>
-
-
 
 ## Tecnologias Utilizadas
 
 ### FrontEnd:
-
 - HTML
 - CSS
 - JavaScript
@@ -63,11 +62,9 @@ Aprendi bastante com cada um deles:
 <img src="https://github.com/prtpj1/prtpj1/blob/main/Github%20Imgs/html2.png" width="50" height="50" alt="HTML" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/CSS2.png" width="50" height="50" alt="CSS" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/JavaScript2.png" width="50" height="50" alt="CSS" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/React2.png" width="50" height="50" alt="React Icon" />
 
 ## Link para visualizar o site do projeto:
-
 [Site do Projeto](https://prtpj1-online-store.netlify.app/)
 
 ## Como rodar a aplicação?
-
 1. Clone o repositório: <br>
 `git clone git@github.com:prtpj1/project-online-store.git` 
 2. Instale as dependências: <br>
