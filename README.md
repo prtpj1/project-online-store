@@ -9,11 +9,15 @@ Este projeto está com o CSS em fase inicial e incompleto. Pude iniciar a implem
 </p> -->
 <hr/>
 <p align="center">
-<a href="#">Descrição do Projeto</a> •
-<a href="#">Tecnologias Utilizadas</a> •
-<a href="#">Visualizar Projeto</a>•
-<a href="#">Rodar a Aplicação</a>
+<a href="#descrição-do-projeto">Descrição do Projeto</a> •
+<a href="#nesse-projeto-apredemos-e-colocamos-em-prática">Aprendizado</a> •
+<a href="#de-acordo-com-requisitos-do-projeto">Requisitos</a> •
+<a href="#">Grupo</a> •
+<a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a> •
+<a href="#link-para-visualizar-o-site-do-projeto">Visualizar Projeto</a> •
+<a href="#como-rodar-a-aplicação">Rodar a Aplicação</a>
 </p>
+<hr/>
 
 ### Descrição do Projeto
 Este foi meu primeiro projeto em grupo que ajudei a desenvolver enquanto estudava na Trybe. Um desafio viria temperadocom ansiedade. Será que daria certo? Todos colaborariam? Conseguiriamos contornar os problemas que pudessem surgir? <br>
@@ -40,8 +44,8 @@ Boa parte do desenvolvimento foi feito em algo similar ao pair-programing, mas c
 Em outros momentos cada membro fez algumas partes do código em separado e também algumas correções e pequenas modificações.<br>
 O grupo possuía colegas de diferentes níveis e conhecimento e com isso fomos desenvolvendo com cada um contribuindo da melhor maneira que conseguia.<br><br>
 
+### Grupo:
 Aprendi bastante com cada um deles:
-
 <!--- [Nome]() -->
 <hr/>
 
