@@ -62,14 +62,15 @@ Aprendi bastante com cada um deles:
 [Site do Projeto](https://prtpj1-online-store.netlify.app/)
 
 ## Como rodar a aplicação?
-1. Clone o repositório: <br>
-`git clone git@github.com:prtpj1/project-online-store.git` 
-2. Instale as dependências: <br>
+- Clone o repositório: <br>
+`$ git clone git@github.com:prtpj1/project-online-store.git`
+- Acesse a pasta do projeto: <br>
+`cd project-online-store`
+- Instale as dependências: <br>
 `npm install`
-3. Inicie a aplicação: <br>
+- Inicie a aplicação: <br>
 `npm start` <br>
 ⚠️Aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: `http://localhost:3000/`
-
 </br>
 
 **OBS:**
