@@ -39,7 +39,7 @@ aside {
 
 body {
   background-color: var(--COLOR-SECOND);
-  font-family: Proxima+Nova, Arial, sans-serif;
+  font-family: "Proxima Nova", Arial, sans-serif;
 }
 
 button {
@@ -430,12 +430,12 @@ ul, li {
   border-radius: 6px 6px 0 0;
   padding: 0 24px;
   width: 100%;
-  font-family: Proxima+Nova, Arial, sans-serif;
+  font-family: "Proxima Nova", Arial, sans-serif;
   font-weight: 600;
 }
 
 .shopping-cart-product-card-name{
-  font-family: Proxima+Nova, Arial, sans-serif;
+  font-family: "Proxima Nova", Arial, sans-serif;
   font-weight: 600;
   margin: 16px 0;
 }
@@ -490,7 +490,7 @@ ul, li {
   color: var(--COLOR-MAIN);  
   display: flex;
   justify-content: center;
-  font-family: Proxima+Nova, Arial, sans-serif;
+  font-family: "Proxima Nova", Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   margin: 10px 20px;
