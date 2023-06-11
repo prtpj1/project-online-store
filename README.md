@@ -1,12 +1,9 @@
 # 12º Projeto: Online Store
+<p align="center">
+<img src="https://github.com/prtpj1/project-online-store/blob/main/src/images/12%20-%20OnlineStore.png" alt="Header" />
+</p>
 
-### :construction: README em construção ! :construction:
-
-Este projeto está com o CSS em fase inicial e incompleto. Pude iniciar a implementação do mesmo, mas logo depois já havia matéria nova e seguido de um novo projeto. Assim que possível estarei adicionando o CSS e as funcionalidades que ficaram faltando.
-<!-- <p align="center">
-
-<img src="" alt="Header" />
-</p> -->
+⚠️Este projeto está com o CSS incompleto. Pude iniciar a implementação do mesmo, mas logo depois já havia matéria nova e seguido de um novo projeto. Recentemente pude adicionar um pouco mais de CSS ao projeto, mas alguns problemas pessoais tem tomado grande parte do meu tempo. Assim que possível estarei adicionando o CSS e as funcionalidades que ficaram faltando.
 <hr/>
 <p align="center">
 <a href="#descrição-do-projeto">Descrição do Projeto</a> •
@@ -19,7 +16,7 @@ Este projeto está com o CSS em fase inicial e incompleto. Pude iniciar a implem
 </p>
 <hr/>
 
-### Descrição do Projeto
+## Descrição do Projeto
 Este foi meu primeiro projeto em grupo que ajudei a desenvolver enquanto estudava na Trybe. Um desafio viria temperadocom ansiedade. Será que daria certo? Todos colaborariam? Conseguiriamos contornar os problemas que pudessem surgir? <br>
 Confesso que estava bastante nervoso, mas tudo foi muito tranquilo. Foi quando pude ver as diferentes formas de abordar problemas com diferentes soluções, onde aprendi e também pude passar o que eu sabia (aprendi mais do que ensinei 🤓) <br>
 
@@ -27,14 +24,15 @@ Neste projeto, criamos uma versão simplificada, sem persistência no banco de d
 Desenvolvemos em grupo suas funcionalidades de acordo com demandas definidas em um quadro Kanban. <br>
 
 O uso do Slack e Zoom também foram muito importantes para a comunicação do grupo.
-<br>
+<br> <br>
 
-### Nesse projeto, apredemos e colocamos em prática:
+## Nesse projeto, apredemos e colocamos em prática:
 - Implementar o módulo de acesso à API do Mercado Livre
-
-### De acordo com requisitos do projeto:
+<br>
+ 
+## De acordo com requisitos do projeto:
 - Buscar produtos por termos ou por categoriasa partir da API do Mercado Livre ✅
-- Adicionar um produto ao carrinho de compras em diferentes quantidades ( ✅
+- Adicionar um produto ao carrinho de compras em diferentes quantidades ✅
 - Remover um produto do carrinho de compras em diferentes quantidades ✅
 - Visualizar detalhes e avaliações prévias de um produto ✅
 - Criar novas avaliações para um protudo ✅
@@ -44,11 +42,11 @@ Boa parte do desenvolvimento foi feito em algo similar ao pair-programing, mas c
 Em outros momentos cada membro fez algumas partes do código em separado e também algumas correções e pequenas modificações.<br>
 O grupo possuía colegas de diferentes níveis e conhecimento e com isso fomos desenvolvendo com cada um contribuindo da melhor maneira que conseguia.<br><br>
 
-### Grupo:
+## Grupo:
 Aprendi bastante com cada um deles:
-[Celso](https://github.com/fioranicelso)
-[Christian](https://github.com/mpchristian)
-[Lucca](https://github.com/luccarendall)
+- [Celso](https://github.com/fioranicelso)
+- [Christian](https://github.com/mpchristian)
+- [Lucca](https://github.com/luccarendall)
 <hr/>
 
 ## Tecnologias Utilizadas
@@ -65,14 +63,15 @@ Aprendi bastante com cada um deles:
 [Site do Projeto](https://prtpj1-online-store.netlify.app/)
 
 ## Como rodar a aplicação?
-1. Clone o repositório: <br>
-`git clone git@github.com:prtpj1/project-online-store.git` 
-2. Instale as dependências: <br>
+- Clone o repositório: <br>
+`$ git clone git@github.com:prtpj1/project-online-store.git`
+- Acesse a pasta do projeto: <br>
+`cd project-online-store`
+- Instale as dependências: <br>
 `npm install`
-3. Inicie a aplicação: <br>
+- Inicie a aplicação: <br>
 `npm start` <br>
 ⚠️Aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: `http://localhost:3000/`
-
 </br>
 
 **OBS:**
