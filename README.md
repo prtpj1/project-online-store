@@ -31,12 +31,12 @@ O uso do Slack e Zoom também foram muito importantes para a comunicação do gr
 <br>
  
 ## De acordo com requisitos do projeto:
-- Buscar produtos por termos ou por categoriasa partir da API do Mercado Livre ✅
-- Adicionar um produto ao carrinho de compras em diferentes quantidades ✅
-- Remover um produto do carrinho de compras em diferentes quantidades ✅
-- Visualizar detalhes e avaliações prévias de um produto ✅
-- Criar novas avaliações para um protudo ✅
-- Criar tela de Checkout para preenchimento dados do usuário para a compra (simulada - botão "Pagamento" não funciona) dos itens selecionados ✅
+- ✅ Buscar produtos por termos ou por categoriasa partir da API do Mercado Livre
+- ✅ Adicionar um produto ao carrinho de compras em diferentes quantidades
+- ✅ Remover um produto do carrinho de compras em diferentes quantidades
+- ✅ Visualizar detalhes e avaliações prévias de um produto
+- ✅ Criar novas avaliações para um protudo
+- ✅ Criar tela de Checkout para preenchimento dados do usuário para a compra (simulada - botão "Pagamento" não funciona) dos itens selecionados
 <br>
 Boa parte do desenvolvimento foi feito em algo similar ao pair-programing, mas com todos nós nos ajudando mutuamente.<br>
 Em outros momentos cada membro fez algumas partes do código em separado e também algumas correções e pequenas modificações.<br>
