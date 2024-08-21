@@ -59,8 +59,8 @@ Aprendi bastante com cada um deles:
 
 <img src="https://github.com/prtpj1/prtpj1/blob/main/Github%20Imgs/html2.png" width="50" height="50" alt="HTML" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/CSS2.png" width="50" height="50" alt="CSS" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/JavaScript2.png" width="50" height="50" alt="CSS" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/React2.png" width="50" height="50" alt="React Icon" />
 
-## Link para visualizar o site do projeto:
-<!--[Site do Projeto](https://prtpj1-online-store.netlify.app/)-->
+<!--## Link para visualizar o site do projeto:
+[Site do Projeto](https://prtpj1-online-store.netlify.app/)-->
 
 ## Como rodar a aplicação?
 - Clone o repositório: <br>
